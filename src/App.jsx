@@ -8,6 +8,7 @@ import AboutUs from "./components/About/AboutUs";
 import CareerPage from "./components/career/Career";
 import ContactPage from "./components/contact/Contact";
 import ComingSoon from "./components/comingSoon/ComingSoon";
+import WhatsAppIcon from "./components/Whatsapp/WhatsAppIcon";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/solution" element={<ComingSoon />} />
         </Routes>
+        <WhatsAppIcon phoneNumber="+919131890800" />
         <Footer />
       </BrowserRouter>
     </div>
