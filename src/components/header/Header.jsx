@@ -12,7 +12,6 @@ const Header = () => {
   const searchInputRef = useRef(null);
   const searchContainerRef = useRef(null);
 
-  // Sample data for search (you can replace this with your actual data)
   const searchData = [
     {
       id: 1,
