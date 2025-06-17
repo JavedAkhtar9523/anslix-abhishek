@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import logoImage from "../../assets/anslix-premium-logo.svg";
+import logoImage from "../../assets/anslix_logo.svg";
 import { Search, Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -142,10 +142,7 @@ const Header = () => {
           {/* Logo */}
           <div className="logo">
             <Link to="/" className="logo-link">
-              <span className="logo-text">
-                Ans<span className="accent">lix</span>
-              </span>
-              {/* <img src={logoImage} alt="" /> */}
+              <img src={logoImage} alt="Anslix Logo" className="logo-image" />
             </Link>
           </div>
 
@@ -361,18 +358,20 @@ const Header = () => {
         /* Logo Styles */
         .logo-link {
           text-decoration: none;
+          display: flex;
+          align-items: center;
         }
 
-        .logo-text {
-          font-size: 28px;
-          font-weight: 700;
-          letter-spacing: 1px;
-          color: white;
-          transition: color 0.3s ease;
+        .logo-image {
+          height: 50px;
+          width: auto;
+          transition: all 0.3s ease;
+          filter: brightness(1);
         }
 
-        .logo-link:hover .logo-text {
-          color: #ff6b00;
+        .logo-link:hover .logo-image {
+          filter: brightness(1.2);
+          transform: scale(1.3);
         }
 
         /* Desktop Navigation */
@@ -631,6 +630,10 @@ const Header = () => {
             padding: 6px 12px;
             font-size: 15px;
           }
+
+          .logo-image {
+            height: 36px;
+          }
         }
 
         @media (max-width: 768px) {
@@ -664,8 +667,8 @@ const Header = () => {
             font-size: 14px;
           }
 
-          .logo-text {
-            font-size: 24px;
+          .logo-image {
+            height: 32px;
           }
         }
 
@@ -674,8 +677,8 @@ const Header = () => {
             padding: 12px 4%;
           }
 
-          .logo-text {
-            font-size: 22px;
+          .logo-image {
+            height: 28px;
           }
 
           .header-actions {

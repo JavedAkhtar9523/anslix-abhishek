@@ -13,8 +13,11 @@ import {
   ArrowLeft,
   CheckCircle,
   Users,
-  Clock,
+  Star,
   Award,
+  Zap,
+  Shield,
+  Target,
 } from "lucide-react";
 import homeImage1 from "../../assets/linkedin-sales-solutions-I9P9uJ_SFU0-unsplash.jpg";
 import homeImage2 from "../../assets/icons8-team-yTwXpLO5HAA-unsplash.jpg";
@@ -44,8 +47,9 @@ const ServicesPage = () => {
         "Cross-browser Compatibility",
         "Content Management Systems",
       ],
-      pricing: "Starting from $999",
-      duration: "2-6 weeks",
+      clientsServed: "200+",
+      projectsCompleted: "350+",
+      satisfactionRate: "98%",
       technologies: ["React", "Node.js", "MongoDB", "Express"],
       image: homeImage1,
     },
@@ -64,8 +68,9 @@ const ServicesPage = () => {
         "Offline Functionality",
         "Real-time Synchronization",
       ],
-      pricing: "Starting from $1,499",
-      duration: "4-12 weeks",
+      clientsServed: "150+",
+      projectsCompleted: "180+",
+      satisfactionRate: "97%",
       technologies: ["React Native", "Flutter", "Swift", "Kotlin"],
       image: homeImage2,
     },
@@ -84,8 +89,9 @@ const ServicesPage = () => {
         "Mobile Commerce",
         "Security & SSL",
       ],
-      pricing: "Starting from $1,999",
-      duration: "6-10 weeks",
+      clientsServed: "120+",
+      projectsCompleted: "140+",
+      satisfactionRate: "99%",
       technologies: ["Shopify", "WooCommerce", "Magento", "Custom"],
       image: homeImage1,
     },
@@ -104,8 +110,9 @@ const ServicesPage = () => {
         "Monitoring & Analytics",
         "Cost Optimization",
       ],
-      pricing: "Starting from $799",
-      duration: "2-8 weeks",
+      clientsServed: "180+",
+      projectsCompleted: "250+",
+      satisfactionRate: "96%",
       technologies: ["AWS", "Azure", "Google Cloud", "Docker"],
       image: homeImage2,
     },
@@ -124,8 +131,9 @@ const ServicesPage = () => {
         "Security Implementation",
         "24/7 Monitoring",
       ],
-      pricing: "Starting from $599",
-      duration: "1-4 weeks",
+      clientsServed: "300+",
+      projectsCompleted: "400+",
+      satisfactionRate: "95%",
       technologies: ["MySQL", "PostgreSQL", "MongoDB", "Redis"],
       image: homeImage1,
     },
@@ -145,8 +153,9 @@ const ServicesPage = () => {
         "Compliance Management",
         "Incident Response",
       ],
-      pricing: "Starting from $1,299",
-      duration: "3-8 weeks",
+      clientsServed: "90+",
+      projectsCompleted: "110+",
+      satisfactionRate: "100%",
       technologies: ["Firewall", "SSL/TLS", "VPN", "SIEM"],
       image: homeImage2,
     },
@@ -165,8 +174,9 @@ const ServicesPage = () => {
         "Usability Testing",
         "Design Systems",
       ],
-      pricing: "Starting from $899",
-      duration: "2-6 weeks",
+      clientsServed: "220+",
+      projectsCompleted: "280+",
+      satisfactionRate: "98%",
       technologies: ["Figma", "Adobe XD", "Sketch", "InVision"],
       image: homeImage1,
     },
@@ -185,8 +195,9 @@ const ServicesPage = () => {
         "Analytics & Reporting",
         "Social Media Marketing",
       ],
-      pricing: "Starting from $499",
-      duration: "Ongoing",
+      clientsServed: "500+",
+      projectsCompleted: "Ongoing",
+      satisfactionRate: "94%",
       technologies: ["Google Analytics", "SEMrush", "Ahrefs", "Social Media"],
       image: homeImage2,
     },
@@ -263,18 +274,28 @@ const ServicesPage = () => {
                       <Users size={24} />
                     </div>
                     <div className="info-text">
-                      <h4>Pricing</h4>
-                      <p>{selectedService.pricing}</p>
+                      <h4>Clients Served</h4>
+                      <p>{selectedService.clientsServed}</p>
                     </div>
                   </div>
 
                   <div className="info-item">
                     <div className="info-icon">
-                      <Clock size={24} />
+                      <Target size={24} />
                     </div>
                     <div className="info-text">
-                      <h4>Duration</h4>
-                      <p>{selectedService.duration}</p>
+                      <h4>Projects Completed</h4>
+                      <p>{selectedService.projectsCompleted}</p>
+                    </div>
+                  </div>
+
+                  <div className="info-item">
+                    <div className="info-icon">
+                      <Star size={24} />
+                    </div>
+                    <div className="info-text">
+                      <h4>Satisfaction Rate</h4>
+                      <p>{selectedService.satisfactionRate}</p>
                     </div>
                   </div>
 
@@ -476,8 +497,8 @@ const ServicesPage = () => {
             display: flex;
             align-items: center;
             gap: 15px;
-            margin-bottom: 25px;
-            padding-bottom: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           }
 
@@ -506,6 +527,7 @@ const ServicesPage = () => {
           .info-text p {
             color: rgba(255, 255, 255, 0.7);
             font-size: 14px;
+            font-weight: 600;
           }
 
           .cta-btn {

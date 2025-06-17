@@ -10,7 +10,6 @@ import {
   Briefcase,
   ChevronRight,
   Search,
-  Filter,
   Globe,
   Calendar,
   DollarSign,
@@ -25,6 +24,26 @@ const CareerPage = () => {
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  // Google Form URL - Replace with your actual Google Form URL
+  const GOOGLE_FORM_URL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSfOodJBBTLJSk-sBFVrE-46pAPmyd_G7I8UDJv2fEW3SG7F1w/viewform?usp=sf_link";
+
+  const handleApplyClick = (jobTitle) => {
+    // Customize the form URL to pre-fill job title if needed
+    const formUrl = `${GOOGLE_FORM_URL}?entry.YOUR_FIELD_ID=${encodeURIComponent(
+      jobTitle
+    )}`;
+    window.open(formUrl, "_blank");
+  };
+
+  const handleGeneralApplication = () => {
+    window.open(GOOGLE_FORM_URL, "_blank");
+  };
+
+  const handleTalentNetwork = () => {
+    window.open(GOOGLE_FORM_URL, "_blank");
+  };
 
   const jobCategories = [
     { id: "all", name: "All Positions", count: 12 },
@@ -176,14 +195,14 @@ const CareerPage = () => {
             <span>🚀 We're Hiring</span>
           </div>
           <h1 className="hero-title">
-            Join Our Mission to Transform
+            Join Our Mission to Transform Education
             <span className="accent">Build the Future. Grow With Us</span>
           </h1>
           <p className="hero-subtitle">
-            ANSLIX IT Services Private Limited, we don’t just build software —
-            we build careers. We believe that our greatest strength lies in our
-            people. That’s why we’re always on the lookout for passionate,
-            driven, and innovative individuals ready to make a real impact
+            At ANSLIX IT Services Private Limited, we don't just build software
+            — we build careers. We believe that our greatest strength lies in
+            our people. That's why we're always on the lookout for passionate,
+            driven, and innovative individuals ready to make a real impact.
           </p>
           <div className="hero-stats">
             {companyStats.map((stat, index) => (
@@ -267,6 +286,7 @@ const CareerPage = () => {
                 placeholder="Search positions..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                aria-label="Search job positions"
               />
             </div>
             <div className="filter-tabs">
@@ -277,6 +297,7 @@ const CareerPage = () => {
                     activeFilter === category.id ? "active" : ""
                   }`}
                   onClick={() => setActiveFilter(category.id)}
+                  aria-label={`Filter by ${category.name}`}
                 >
                   {category.name}
                   <span className="count">({category.count})</span>
@@ -322,7 +343,11 @@ const CareerPage = () => {
                   ))}
                 </div>
 
-                <button className="apply-btn">
+                <button
+                  className="apply-btn"
+                  onClick={() => handleApplyClick(job.title)}
+                  aria-label={`Apply for ${job.title} position`}
+                >
                   Apply Now
                   <ChevronRight size={16} />
                 </button>
@@ -397,8 +422,20 @@ const CareerPage = () => {
             for education and innovation.
           </p>
           <div className="cta-actions">
-            <button className="btn-primary">Send General Application</button>
-            <button className="btn-secondary">Join Our Talent Network</button>
+            <button
+              className="btn-primary"
+              onClick={handleGeneralApplication}
+              aria-label="Send general application"
+            >
+              Send General Application
+            </button>
+            <button
+              className="btn-secondary"
+              onClick={handleTalentNetwork}
+              aria-label="Join our talent network"
+            >
+              Join Our Talent Network
+            </button>
           </div>
         </div>
       </section>
@@ -419,7 +456,7 @@ const CareerPage = () => {
         .section-content {
           max-width: 1200px;
           margin: 0 auto;
-          padding: 0 5%;
+          padding: 0 20px;
         }
 
         .section-title {
@@ -454,6 +491,7 @@ const CareerPage = () => {
           box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4);
           display: flex;
           align-items: center;
+          justify-content: center;
           gap: 8px;
         }
 
@@ -473,6 +511,10 @@ const CareerPage = () => {
           font-weight: 600;
           cursor: pointer;
           transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
         }
 
         .btn-secondary:hover {
@@ -482,6 +524,7 @@ const CareerPage = () => {
 
         .accent {
           color: #ff6b00;
+          display: block;
         }
 
         /* Animation classes */
@@ -505,13 +548,13 @@ const CareerPage = () => {
           min-height: 90vh;
           position: relative;
           overflow: hidden;
+          padding: 0 20px;
         }
 
         .hero-content {
           flex: 1;
           max-width: 600px;
           z-index: 2;
-          padding-left: 5%;
         }
 
         .hero-badge {
@@ -573,6 +616,9 @@ const CareerPage = () => {
           position: relative;
           height: 100%;
           min-height: 400px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .floating-elements {
@@ -721,6 +767,7 @@ const CareerPage = () => {
           position: relative;
           max-width: 400px;
           margin: 0 auto;
+          width: 100%;
         }
 
         .search-box svg {
@@ -746,6 +793,7 @@ const CareerPage = () => {
         .search-box input:focus {
           border-color: rgba(255, 107, 0, 0.5);
           background: rgba(255, 255, 255, 0.08);
+          box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.3);
         }
 
         .filter-tabs {
@@ -785,6 +833,7 @@ const CareerPage = () => {
         .jobs-grid {
           display: grid;
           gap: 30px;
+          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         }
 
         .job-card {
@@ -806,6 +855,7 @@ const CareerPage = () => {
           justify-content: space-between;
           align-items: flex-start;
           margin-bottom: 20px;
+          gap: 15px;
         }
 
         .job-title {
@@ -827,6 +877,7 @@ const CareerPage = () => {
           border-radius: 15px;
           font-size: 12px;
           font-weight: 600;
+          flex-shrink: 0;
         }
 
         .job-description {
@@ -882,7 +933,9 @@ const CareerPage = () => {
           transition: all 0.3s ease;
           display: flex;
           align-items: center;
+          justify-content: center;
           gap: 8px;
+          width: 100%;
         }
 
         .apply-btn:hover {
@@ -894,6 +947,7 @@ const CareerPage = () => {
           text-align: center;
           padding: 60px 20px;
           color: rgba(255, 255, 255, 0.6);
+          grid-column: 1 / -1;
         }
 
         .no-results-icon {
@@ -979,6 +1033,7 @@ const CareerPage = () => {
           gap: 12px;
           color: rgba(255, 255, 255, 0.8);
           font-size: 15px;
+          text-align: left;
         }
 
         .check {
@@ -996,7 +1051,7 @@ const CareerPage = () => {
             rgba(30, 144, 255, 0.05)
           );
           border-radius: 30px;
-          margin: 0 5%;
+          margin: 0 20px;
           position: relative;
           overflow: hidden;
         }
@@ -1065,17 +1120,6 @@ const CareerPage = () => {
           }
         }
 
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
         /* Responsive Design */
         @media (max-width: 1200px) {
           .hero-stats {
@@ -1096,13 +1140,14 @@ const CareerPage = () => {
           .career-hero {
             flex-direction: column;
             text-align: center;
-            padding-top: 40px;
+            padding-top: 80px;
+            padding-bottom: 60px;
           }
 
           .hero-content {
             max-width: 100%;
-            padding-left: 0;
             margin-bottom: 40px;
+            text-align: center;
           }
 
           .hero-title {
@@ -1111,6 +1156,14 @@ const CareerPage = () => {
 
           .hero-stats {
             grid-template-columns: repeat(2, 1fr);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+
+          .hero-visual {
+            min-height: 300px;
+            width: 100%;
           }
 
           .values-grid {
@@ -1163,13 +1216,16 @@ const CareerPage = () => {
             gap: 10px;
           }
 
+          .jobs-grid {
+            grid-template-columns: 1fr;
+          }
+
           .benefits-grid {
             grid-template-columns: 1fr;
           }
 
           .benefits-list {
             grid-template-columns: 1fr;
-            text-align: left;
           }
 
           .cta-content {
@@ -1189,7 +1245,6 @@ const CareerPage = () => {
           .btn-secondary {
             width: 100%;
             max-width: 280px;
-            justify-content: center;
           }
         }
 
@@ -1215,6 +1270,7 @@ const CareerPage = () => {
             justify-content: flex-start;
             overflow-x: auto;
             padding-bottom: 10px;
+            -webkit-overflow-scrolling: touch;
           }
 
           .filter-tab {
@@ -1238,28 +1294,25 @@ const CareerPage = () => {
           .cta-content p {
             font-size: 16px;
           }
+
+          .cta-section {
+            margin: 0 10px;
+          }
         }
 
         /* Accessibility improvements */
         @media (prefers-reduced-motion: reduce) {
           * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
+            animation: none !important;
+            transition: none !important;
           }
         }
 
         /* Focus states for accessibility */
-        .btn-primary:focus,
-        .btn-secondary:focus,
-        .apply-btn:focus,
-        .filter-tab:focus {
+        button:focus,
+        input:focus {
           outline: 2px solid #ff6b00;
           outline-offset: 2px;
-        }
-
-        .search-box input:focus {
-          box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.3);
         }
 
         /* High contrast mode support */
@@ -1267,12 +1320,16 @@ const CareerPage = () => {
           .job-card,
           .benefit-card,
           .value-card {
-            border-color: rgba(255, 255, 255, 0.3);
+            border: 2px solid white;
           }
 
           .job-tag,
           .job-type-badge {
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid white;
+          }
+
+          .btn-secondary {
+            border: 2px solid white;
           }
         }
       `}</style>

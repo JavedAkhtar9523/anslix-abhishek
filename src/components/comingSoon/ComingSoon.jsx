@@ -14,21 +14,15 @@ import {
   CheckCircle,
   Phone,
   MapPin,
+  Sparkles,
+  TrendingUp,
+  Target,
 } from "lucide-react";
 
 const ComingSoon = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [particles, setParticles] = useState([]);
-
-  const targetDate = new Date();
-  targetDate.setDate(targetDate.getDate() + 30);
 
   useEffect(() => {
     const newParticles = [];
@@ -44,30 +38,6 @@ const ComingSoon = () => {
     }
     setParticles(newParticles);
   }, []);
-
-  // Countdown timer
-  useEffect(() => {
-    const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate.getTime() - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      setTimeLeft({ days, hours, minutes, seconds });
-
-      if (distance < 0) {
-        clearInterval(timer);
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-      }
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [targetDate]);
 
   const handleEmailSubmit = (e) => {
     e.preventDefault();
@@ -138,26 +108,99 @@ const ComingSoon = () => {
             efficiency, and excellence like never before!
           </p>
 
-          {/* Countdown Timer */}
-          <div className="countdown">
-            <div className="timer-card">
-              <div className="timer-number">{timeLeft.days}</div>
-              <div className="timer-label">Days</div>
+          {/* Animated Stats Section */}
+          <div className="stats-showcase">
+            <div className="stats-grid">
+              <div className="stat-card">
+                <div className="stat-icon">
+                  <TrendingUp size={32} />
+                </div>
+                <div className="stat-number">500+</div>
+                <div className="stat-label">Projects Delivered</div>
+                <div className="stat-glow"></div>
+              </div>
+              <div className="stat-card">
+                <div className="stat-icon">
+                  <Users size={32} />
+                </div>
+                <div className="stat-number">200+</div>
+                <div className="stat-label">Happy Clients</div>
+                <div className="stat-glow"></div>
+              </div>
+              <div className="stat-card">
+                <div className="stat-icon">
+                  <Award size={32} />
+                </div>
+                <div className="stat-number">10+</div>
+                <div className="stat-label">Years Experience</div>
+                <div className="stat-glow"></div>
+              </div>
+              <div className="stat-card">
+                <div className="stat-icon">
+                  <Target size={32} />
+                </div>
+                <div className="stat-number">99%</div>
+                <div className="stat-label">Success Rate</div>
+                <div className="stat-glow"></div>
+              </div>
             </div>
-            <div className="timer-divider">:</div>
-            <div className="timer-card">
-              <div className="timer-number">{timeLeft.hours}</div>
-              <div className="timer-label">Hours</div>
-            </div>
-            <div className="timer-divider">:</div>
-            <div className="timer-card">
-              <div className="timer-number">{timeLeft.minutes}</div>
-              <div className="timer-label">Minutes</div>
-            </div>
-            <div className="timer-divider">:</div>
-            <div className="timer-card">
-              <div className="timer-number">{timeLeft.seconds}</div>
-              <div className="timer-label">Seconds</div>
+
+            {/* Animated Progress Bars */}
+            <div className="progress-section">
+              <h3 className="progress-title">
+                <Sparkles size={20} />
+                Our Expertise Levels
+              </h3>
+              <div className="progress-bars">
+                <div className="progress-item">
+                  <div className="progress-label">
+                    <span>Web Development</span>
+                    <span>95%</span>
+                  </div>
+                  <div className="progress-bar">
+                    <div
+                      className="progress-fill"
+                      style={{ width: "95%", animationDelay: "0.5s" }}
+                    ></div>
+                  </div>
+                </div>
+                <div className="progress-item">
+                  <div className="progress-label">
+                    <span>Mobile Apps</span>
+                    <span>90%</span>
+                  </div>
+                  <div className="progress-bar">
+                    <div
+                      className="progress-fill"
+                      style={{ width: "90%", animationDelay: "1s" }}
+                    ></div>
+                  </div>
+                </div>
+                <div className="progress-item">
+                  <div className="progress-label">
+                    <span>Cloud Solutions</span>
+                    <span>88%</span>
+                  </div>
+                  <div className="progress-bar">
+                    <div
+                      className="progress-fill"
+                      style={{ width: "88%", animationDelay: "1.5s" }}
+                    ></div>
+                  </div>
+                </div>
+                <div className="progress-item">
+                  <div className="progress-label">
+                    <span>AI & ML</span>
+                    <span>85%</span>
+                  </div>
+                  <div className="progress-bar">
+                    <div
+                      className="progress-fill"
+                      style={{ width: "85%", animationDelay: "2s" }}
+                    ></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -300,12 +343,6 @@ const ComingSoon = () => {
             </div>
           </div>
         </div>
-
-        {/* Footer */}
-        {/* <div className="footer">
-          <p>&copy; 2024 Anslix IT Solutions. All rights reserved.</p>
-          <p>Transforming businesses through innovative technology solutions.</p>
-        </div> */}
       </div>
 
       <style jsx>{`
@@ -483,46 +520,158 @@ const ComingSoon = () => {
           margin-right: auto;
         }
 
-        .countdown {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 20px;
+        /* Stats Showcase Styles */
+        .stats-showcase {
+          margin-bottom: 80px;
+        }
+
+        .stats-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 30px;
           margin-bottom: 60px;
-          flex-wrap: wrap;
         }
 
-        .timer-card {
+        .stat-card {
+          position: relative;
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(15px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 25px;
+          padding: 30px 20px;
+          text-align: center;
+          transition: all 0.3s ease;
+          animation: fadeInUp 1s ease-out;
+          overflow: hidden;
+        }
+
+        .stat-card:hover {
+          transform: translateY(-10px) scale(1.02);
           background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          border-radius: 20px;
-          padding: 25px 20px;
-          min-width: 100px;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-          animation: cardPulse 2s ease-in-out infinite;
+          box-shadow: 0 25px 50px rgba(255, 107, 0, 0.2);
         }
 
-        .timer-number {
+        .stat-card:hover .stat-glow {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+
+        .stat-glow {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 100px;
+          height: 100px;
+          background: radial-gradient(
+            circle,
+            rgba(255, 107, 0, 0.3) 0%,
+            transparent 70%
+          );
+          border-radius: 50%;
+          transform: translate(-50%, -50%) scale(0.8);
+          opacity: 0;
+          transition: all 0.5s ease;
+          z-index: -1;
+        }
+
+        .stat-icon {
+          color: #ff6b00;
+          margin-bottom: 15px;
+          animation: bounceIn 1s ease-out;
+        }
+
+        .stat-number {
           font-size: 2.5rem;
           font-weight: 900;
           color: #ff6b00;
-          text-shadow: 0 0 20px rgba(255, 107, 0, 0.5);
+          margin-bottom: 10px;
+          text-shadow: 0 0 20px rgba(255, 107, 0, 0.3);
+          animation: countUp 2s ease-out;
         }
 
-        .timer-label {
+        .stat-label {
           font-size: 0.9rem;
           color: rgba(255, 255, 255, 0.7);
           text-transform: uppercase;
           letter-spacing: 1px;
-          margin-top: 5px;
         }
 
-        .timer-divider {
-          font-size: 2rem;
+        /* Progress Section Styles */
+        .progress-section {
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 25px;
+          padding: 40px;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        .progress-title {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          font-size: 1.3rem;
+          font-weight: 600;
           color: #ff6b00;
-          font-weight: bold;
-          animation: blink 1s ease-in-out infinite;
+          margin-bottom: 30px;
+          text-shadow: 0 0 10px rgba(255, 107, 0, 0.3);
+        }
+
+        .progress-bars {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .progress-item {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .progress-label {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 0.9rem;
+          color: rgba(255, 255, 255, 0.8);
+          font-weight: 500;
+        }
+
+        .progress-bar {
+          height: 8px;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 10px;
+          overflow: hidden;
+          position: relative;
+        }
+
+        .progress-fill {
+          height: 100%;
+          background: linear-gradient(90deg, #ff6b00, #ff8b30, #fbbf24);
+          border-radius: 10px;
+          position: relative;
+          animation: progressFill 2s ease-out forwards;
+          transform-origin: left;
+          transform: scaleX(0);
+        }
+
+        .progress-fill::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent
+          );
+          animation: progressShine 2s ease-in-out infinite;
         }
 
         .section-title {
@@ -751,12 +900,6 @@ const ComingSoon = () => {
           font-size: 1rem;
         }
 
-        .footer {
-          color: rgba(255, 255, 255, 0.5);
-          font-size: 0.9rem;
-          line-height: 1.6;
-        }
-
         /* Animations */
         @keyframes float {
           0%,
@@ -841,26 +984,43 @@ const ComingSoon = () => {
           }
         }
 
-        @keyframes cardPulse {
-          0%,
-          100% {
-            transform: scale(1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        @keyframes bounceIn {
+          0% {
+            transform: scale(0.8);
+            opacity: 0;
           }
           50% {
-            transform: scale(1.02);
-            box-shadow: 0 12px 40px rgba(255, 107, 0, 0.2);
+            transform: scale(1.1);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(1);
           }
         }
 
-        @keyframes blink {
-          0%,
-          50% {
+        @keyframes countUp {
+          from {
+            transform: translateY(20px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
             opacity: 1;
           }
-          51%,
+        }
+
+        @keyframes progressFill {
+          to {
+            transform: scaleX(1);
+          }
+        }
+
+        @keyframes progressShine {
+          0% {
+            transform: translateX(-100%);
+          }
           100% {
-            opacity: 0.3;
+            transform: translateX(100%);
           }
         }
 
@@ -874,17 +1034,13 @@ const ComingSoon = () => {
             font-size: 2rem;
           }
 
-          .countdown {
-            gap: 10px;
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
           }
 
-          .timer-card {
-            padding: 20px 15px;
-            min-width: 80px;
-          }
-
-          .timer-number {
-            font-size: 2rem;
+          .progress-section {
+            padding: 30px 20px;
           }
 
           .subscription-section {
@@ -930,14 +1086,8 @@ const ComingSoon = () => {
             font-size: 2rem;
           }
 
-          .countdown {
-            flex-direction: column;
-            gap: 15px;
-          }
-
-          .timer-card {
-            width: 100%;
-            max-width: 120px;
+          .stats-grid {
+            grid-template-columns: 1fr;
           }
 
           .orb-1,
@@ -954,6 +1104,11 @@ const ComingSoon = () => {
           .service-icon {
             width: 60px;
             height: 60px;
+          }
+
+          .progress-title {
+            flex-direction: column;
+            text-align: center;
           }
         }
       `}</style>

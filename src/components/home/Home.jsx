@@ -1,15 +1,6 @@
 import React, { useState, useEffect } from "react";
 import homeImage1 from "../../assets/linkedin-sales-solutions-I9P9uJ_SFU0-unsplash.jpg";
 import homeImage2 from "../../assets/icons8-team-yTwXpLO5HAA-unsplash.jpg";
-// import {
-//   Book,
-//   Monitor,
-//   Video,
-//   Award,
-//   ArrowRight,
-//   ChevronRight,
-//   Star,
-// } from "lucide-react";
 import {
   Code,
   Server,
@@ -46,17 +37,19 @@ const Home = () => {
       {/* Hero Section */}
       <section className={`hero ${isVisible ? "visible" : ""}`}>
         <div className="hero-content">
-          <h1 className="hero-title">Empowering Digital Transformation</h1>
+          <h1 className="hero-title">
+            Transforming Ideas into Digital Reality
+          </h1>
           <p className="hero-subtitle">
-            We specialize in custom software development, web & mobile app
-            solutions, cloud integration, and IT consulting—empowering startups,
-            enterprises, and SMEs worldwide with cost-effective, scalable, and
-            secure offshore development services from India.
+            Leading IT solutions provider specializing in custom software
+            development, cloud computing, mobile applications, and digital
+            transformation. We deliver cutting-edge technology solutions that
+            drive business growth and innovation for enterprises worldwide.
           </p>
           <div className="hero-actions">
-            <button className="btn-primary">Read More</button>
+            <button className="btn-primary">Our Services</button>
             <button className="btn-secondary">
-              Find The Solution <ChevronRight size={16} />
+              Get Started <ChevronRight size={16} />
             </button>
           </div>
         </div>
@@ -69,7 +62,10 @@ const Home = () => {
               <div className="float-element circle"></div>
             </div>
             <div className="students-img">
-              <img src={homeImage1} alt="Students collaborating" />
+              <img
+                src={homeImage1}
+                alt="Technology professionals collaborating"
+              />
             </div>
           </div>
         </div>
@@ -84,25 +80,12 @@ const Home = () => {
             </div>
             <h3>Custom Software Development</h3>
             <p>
-              Our custom software development services help clients build and
-              integrate....
+              Build scalable, robust applications tailored to your business
+              needs. From enterprise solutions to startup MVPs, we deliver
+              quality software that drives results.
             </p>
             <a href="#" className="read-more">
-              Read More <ArrowRight size={14} />
-            </a>
-          </div>
-
-          <div className="feature-card">
-            <div className="feature-icon orange">
-              <Server size={24} />
-            </div>
-            <h3>Agile / DevOps Development</h3>
-            <p>
-              Agile refers to an iterative approach which focuses on
-              collaboration, customer
-            </p>
-            <a href="#" className="read-more">
-              Read More <ArrowRight size={14} />
+              Learn More <ArrowRight size={14} />
             </a>
           </div>
 
@@ -110,13 +93,29 @@ const Home = () => {
             <div className="feature-icon orange">
               <Cloud size={24} />
             </div>
-            <h3>Cloud Computing Services</h3>
+            <h3>Cloud Solutions & DevOps</h3>
             <p>
-              Our ERP services range from managing the ERP system, upgrades,
-              migrations,
+              Modernize your infrastructure with cloud migration,
+              containerization, and automated deployment pipelines for improved
+              scalability and efficiency.
             </p>
             <a href="#" className="read-more">
-              Read More <ArrowRight size={14} />
+              Learn More <ArrowRight size={14} />
+            </a>
+          </div>
+
+          <div className="feature-card">
+            <div className="feature-icon orange">
+              <Smartphone size={24} />
+            </div>
+            <h3>Mobile App Development</h3>
+            <p>
+              Create engaging mobile experiences for iOS and Android platforms.
+              Native and cross-platform solutions that connect with your
+              audience.
+            </p>
+            <a href="#" className="read-more">
+              Learn More <ArrowRight size={14} />
             </a>
           </div>
 
@@ -126,11 +125,11 @@ const Home = () => {
             </div>
             <h3>UI/UX Design & Development</h3>
             <p>
-              We are specialized in providing custom database solutions that
-              support your specific business.
+              Design intuitive, user-centered interfaces that enhance user
+              experience and drive engagement across all digital touchpoints.
             </p>
             <a href="#" className="read-more">
-              Read More <ArrowRight size={14} />
+              Learn More <ArrowRight size={14} />
             </a>
           </div>
         </div>
@@ -139,110 +138,106 @@ const Home = () => {
       {/* Community Section */}
       <section className={`community ${isVisible ? "visible" : ""}`}>
         <div className="community-image">
-          <img src={homeImage2} alt="Learning community" />
+          <img src={homeImage2} alt="Technology team collaboration" />
         </div>
         <div className="community-content">
-          <h2>A few word about us</h2>
+          <h2>About TechInnovate Solutions</h2>
           <p>
-            We, at ANSLIX IT Services Private Limited, provide software
-            consulting and technology services on a global level.
+            We are a leading technology company delivering innovative IT
+            solutions that transform businesses worldwide. With expertise in
+            cutting-edge technologies and a commitment to excellence.
           </p>
 
           <div className="community-features">
             <div className="community-feature">
               <div className="feature-icon blue">
-                <Star size={24} />
+                <Target size={24} />
               </div>
               <div className="feature-text">
-                <h4>Global Technology Partner</h4>
+                <h4>Innovation-Driven Approach</h4>
                 <p>
-                  ANSLIX IT Services Private Limited delivers expert software
-                  consulting and end-to-end technology solutions to clients
-                  worldwide
+                  We leverage the latest technologies including AI, IoT,
+                  blockchain, and cloud computing to deliver future-ready
+                  solutions that give your business a competitive edge.
                 </p>
               </div>
             </div>
 
             <div className="community-feature">
               <div className="feature-icon blue">
-                <Monitor size={24} />
+                <CheckCircle size={24} />
               </div>
               <div className="feature-text">
-                <h4>Driven by Innovation</h4>
+                <h4>Proven Track Record</h4>
                 <p>
-                  We specialize in building scalable, customized software that
-                  empowers businesses through digital transformation and
-                  innovation
+                  With 500+ successful projects delivered across 30+ countries,
+                  we have established ourselves as a trusted technology partner
+                  for businesses of all sizes.
                 </p>
               </div>
             </div>
           </div>
 
-          <button className="btn-primary">Discover More</button>
+          <button className="btn-primary">Learn More About Us</button>
         </div>
       </section>
 
       {/* Topics Section */}
       <section className={`topics ${isVisible ? "visible" : ""}`}>
         <h2 className="section-title-home" style={{ marginBottom: "30px" }}>
-          Services We Provide
+          Our Core Expertise
         </h2>
 
         <div className="topics-grid">
           <div className="topic-card">
             <div className="topic-icon orange">
-              <Star size={24} />
+              <Database size={24} />
             </div>
-            <h3>DB Modeling/Design & BI/Data Warehousing</h3>
+            <h3>Data Analytics & Business Intelligence</h3>
             <span className="topic-count">
-              We offer end-to-end BI and DW services – Reporting and Analytics,
-              Maintenance and Support. Our services cover Business Intelligence
-              road map, data warehousing implementation, analytics, data mining,
-              data quality and master data management. Our business
-              result-oriented approach ensures return on information.
+              Transform your data into actionable insights with our
+              comprehensive BI solutions. We provide data warehousing,
+              analytics, reporting, and machine learning services that help you
+              make informed business decisions and gain competitive advantage.
             </span>
           </div>
 
           <div className="topic-card">
             <div className="topic-icon orange">
-              <Monitor size={24} />
+              <Globe size={24} />
             </div>
-            <h3>Custom Software Development</h3>
+            <h3>Enterprise Web Applications</h3>
             <span className="topic-count">
-              Our custom software development services help clients build and
-              integrate sophisticated business applications and/or websites with
-              client server and legacy systems. We create and deploy robust,
-              scalable and extensible architectures for use in a wide range of
-              industries.Our expertise ensures deliverables on time, of
-              excellent quality, and effective in meeting client challenges.
+              Build powerful, scalable web applications that drive your business
+              forward. From e-commerce platforms to enterprise portals, we
+              create robust solutions using modern frameworks and best practices
+              for optimal performance and security.
             </span>
           </div>
 
           <div className="topic-card">
             <div className="topic-icon orange">
-              <TestTube size={24} />
+              <Shield size={24} />
             </div>
-            <h3>Independent QA & Testing</h3>
+            <h3>Cybersecurity & Quality Assurance</h3>
             <span className="topic-count">
-              We have a unique combination of software testing and Quality
-              Assurance (QA) specialists with proven expertise in testing tools
-              and methodologies. Our ISTQB-certified testers will maintain
-              constant communication with your development team while testing
-              your mobile/desktop application.
+              Protect your digital assets with our comprehensive security
+              solutions and rigorous QA testing. We ensure your applications are
+              secure, reliable, and perform flawlessly across all platforms and
+              environments.
             </span>
           </div>
 
           <div className="topic-card">
             <div className="topic-icon orange">
-              <Award size={24} />
+              <Zap size={24} />
             </div>
-            <h3>Agile / DevOps</h3>
+            <h3>Digital Transformation & Automation</h3>
             <span className="topic-count">
-              Agile refers to an iterative approach which focuses on
-              collaboration, customer feedback, and small, rapid releases.
-              DevOps is considered a practice of bringing development and
-              operations teams together. Purpose. Agile helps to manage complex
-              projects.
+              Modernize your business processes with intelligent automation and
+              digital transformation strategies. We help organizations
+              streamline operations, improve efficiency, and adapt to the
+              digital-first world.
             </span>
           </div>
         </div>
@@ -252,305 +247,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// ================
-
-// import React, { useState, useEffect } from "react";
-// import {
-//   Code,
-//   Server,
-//   Cloud,
-//   Palette,
-//   Database,
-//   TestTube,
-//   GitBranch,
-//   Shield,
-//   Smartphone,
-//   Globe,
-//   Zap,
-//   Users,
-//   Award,
-//   ArrowRight,
-//   ChevronRight,
-//   Star,
-//   CheckCircle,
-//   Target,
-//   Monitor,
-// } from "lucide-react";
-// import "../home/Home.css";
-
-// const Home = () => {
-//   const [isVisible, setIsVisible] = useState(false);
-
-//   // Animation trigger when component mounts
-//   useEffect(() => {
-//     setIsVisible(true);
-//   }, []);
-
-//   return (
-//     <div className="home">
-//       {/* Hero Section */}
-//       <section className={`hero ${isVisible ? "visible" : ""}`}>
-//         <div className="hero-content">
-//           <h1 className="hero-title">Empowering Digital Transformation</h1>
-//           <p className="hero-subtitle">
-//             We specialize in custom software development, web & mobile app
-//             solutions, cloud integration, and IT consulting—empowering startups,
-//             enterprises, and SMEs worldwide with cost-effective, scalable, and
-//             secure offshore development services from India.
-//           </p>
-//           <div className="hero-actions">
-//             <button className="btn-primary">Read More</button>
-//             <button className="btn-secondary">
-//               Find The Solution <ChevronRight size={16} />
-//             </button>
-//           </div>
-//         </div>
-//         <div className="hero-image">
-//           <div className="image-container">
-//             <div className="floating-elements">
-//               <div className="float-element planet-1"></div>
-//               <div className="float-element planet-2"></div>
-//               <div className="float-element plus"></div>
-//               <div className="float-element circle"></div>
-//             </div>
-//             <div className="students-img">
-//               {/* Replace with your actual image */}
-//               <div
-//                 style={{
-//                   background: "linear-gradient(135deg, #1e3a8a, #3b82f6)",
-//                   height: "400px",
-//                   borderRadius: "20px",
-//                   display: "flex",
-//                   alignItems: "center",
-//                   justifyContent: "center",
-//                   color: "white",
-//                 }}
-//               >
-//                 <Users size={80} />
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Features Section */}
-//       <section className={`features ${isVisible ? "visible" : ""}`}>
-//         <div className="feature-container">
-//           <div className="feature-card">
-//             <div className="feature-icon orange">
-//               <Code size={24} />
-//             </div>
-//             <h3>Custom Software Development</h3>
-//             <p>
-//               Our custom software development services help clients build and
-//               integrate sophisticated business applications with robust,
-//               scalable architectures.
-//             </p>
-//             <a href="#" className="read-more">
-//               Read More <ArrowRight size={14} />
-//             </a>
-//           </div>
-
-//           <div className="feature-card">
-//             <div className="feature-icon orange">
-//               <GitBranch size={24} />
-//             </div>
-//             <h3>Agile / DevOps Development</h3>
-//             <p>
-//               Agile refers to an iterative approach which focuses on
-//               collaboration, customer feedback, and continuous delivery
-//               practices.
-//             </p>
-//             <a href="#" className="read-more">
-//               Read More <ArrowRight size={14} />
-//             </a>
-//           </div>
-
-//           <div className="feature-card">
-//             <div className="feature-icon orange">
-//               <Cloud size={24} />
-//             </div>
-//             <h3>Cloud Computing Services</h3>
-//             <p>
-//               Our cloud services range from managing cloud infrastructure,
-//               migrations, optimization, and comprehensive cloud-native
-//               solutions.
-//             </p>
-//             <a href="#" className="read-more">
-//               Read More <ArrowRight size={14} />
-//             </a>
-//           </div>
-
-//           <div className="feature-card">
-//             <div className="feature-icon orange">
-//               <Palette size={24} />
-//             </div>
-//             <h3>UI/UX Design & Development</h3>
-//             <p>
-//               We are specialized in providing custom UI/UX design solutions that
-//               support your specific business requirements and user experience.
-//             </p>
-//             <a href="#" className="read-more">
-//               Read More <ArrowRight size={14} />
-//             </a>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Community Section */}
-//       <section className={`community ${isVisible ? "visible" : ""}`}>
-//         <div className="community-image">
-//           {/* Replace with your actual image */}
-//           <div
-//             style={{
-//               background: "linear-gradient(135deg, #ff6b00, #ff8b30)",
-//               height: "400px",
-//               borderRadius: "20px",
-//               display: "flex",
-//               alignItems: "center",
-//               justifyContent: "center",
-//               color: "white",
-//             }}
-//           >
-//             <Target size={80} />
-//           </div>
-//         </div>
-//         <div className="community-content">
-//           <h2>A few words about us</h2>
-//           <p>
-//             We, at ANSLIX IT Services Private Limited, provide software
-//             consulting and technology services on a global level.
-//           </p>
-
-//           <div className="community-features">
-//             <div className="community-feature">
-//               <div className="feature-icon blue">
-//                 <Globe size={24} />
-//               </div>
-//               <div className="feature-text">
-//                 <h4>Global Technology Partner</h4>
-//                 <p>
-//                   ANSLIX IT Services Private Limited delivers expert software
-//                   consulting and end-to-end technology solutions to clients
-//                   worldwide with 24/7 support and seamless collaboration.
-//                 </p>
-//               </div>
-//             </div>
-
-//             <div className="community-feature">
-//               <div className="feature-icon blue">
-//                 <Zap size={24} />
-//               </div>
-//               <div className="feature-text">
-//                 <h4>Driven by Innovation</h4>
-//                 <p>
-//                   We specialize in building scalable, customized software that
-//                   empowers businesses through digital transformation and
-//                   cutting-edge innovation technologies.
-//                 </p>
-//               </div>
-//             </div>
-//           </div>
-
-//           <button className="btn-primary">Discover More</button>
-//         </div>
-//       </section>
-
-//       {/* Topics Section */}
-//       <section className={`topics ${isVisible ? "visible" : ""}`}>
-//         <h2 className="section-title-home" style={{ marginBottom: "30px" }}>
-//           Services We Provide
-//         </h2>
-
-//         <div className="topics-grid">
-//           <div className="topic-card">
-//             <div className="topic-icon orange">
-//               <Database size={24} />
-//             </div>
-//             <h3>DB Modeling/Design & BI/Data Warehousing</h3>
-//             <span className="topic-count">
-//               We offer end-to-end BI and DW services – Reporting and Analytics,
-//               Maintenance and Support. Our services cover Business Intelligence
-//               road map, data warehousing implementation, analytics, data mining,
-//               data quality and master data management. Our business
-//               result-oriented approach ensures return on information.
-//             </span>
-//           </div>
-
-//           <div className="topic-card">
-//             <div className="topic-icon orange">
-//               <Code size={24} />
-//             </div>
-//             <h3>Custom Software Development</h3>
-//             <span className="topic-count">
-//               Our custom software development services help clients build and
-//               integrate sophisticated business applications and/or websites with
-//               client server and legacy systems. We create and deploy robust,
-//               scalable and extensible architectures for use in a wide range of
-//               industries. Our expertise ensures deliverables on time, of
-//               excellent quality, and effective in meeting client challenges.
-//             </span>
-//           </div>
-
-//           <div className="topic-card">
-//             <div className="topic-icon orange">
-//               <TestTube size={24} />
-//             </div>
-//             <h3>Independent QA & Testing</h3>
-//             <span className="topic-count">
-//               We have a unique combination of software testing and Quality
-//               Assurance (QA) specialists with proven expertise in testing tools
-//               and methodologies. Our ISTQB-certified testers will maintain
-//               constant communication with your development team while testing
-//               your mobile/desktop application with comprehensive test coverage.
-//             </span>
-//           </div>
-
-//           <div className="topic-card">
-//             <div className="topic-icon orange">
-//               <GitBranch size={24} />
-//             </div>
-//             <h3>Agile / DevOps</h3>
-//             <span className="topic-count">
-//               Agile refers to an iterative approach which focuses on
-//               collaboration, customer feedback, and small, rapid releases.
-//               DevOps is considered a practice of bringing development and
-//               operations teams together. Purpose: Agile helps to manage complex
-//               projects with continuous integration and delivery practices.
-//             </span>
-//           </div>
-
-//           <div className="topic-card">
-//             <div className="topic-icon orange">
-//               <Smartphone size={24} />
-//             </div>
-//             <h3>Mobile App Development</h3>
-//             <span className="topic-count">
-//               We develop native iOS and Android applications as well as
-//               cross-platform solutions using React Native and Flutter. From
-//               concept to deployment, we create engaging mobile experiences that
-//               drive user engagement and business growth with modern UI/UX design
-//               principles.
-//             </span>
-//           </div>
-
-//           <div className="topic-card">
-//             <div className="topic-icon orange">
-//               <Shield size={24} />
-//             </div>
-//             <h3>Cybersecurity Solutions</h3>
-//             <span className="topic-count">
-//               Comprehensive security services including penetration testing,
-//               security audits, compliance management, and 24/7 monitoring. We
-//               help protect your digital assets against evolving cyber threats
-//               with industry-standard security practices and protocols.
-//             </span>
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// };
-
-// export default Home;
